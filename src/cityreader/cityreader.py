@@ -1,6 +1,7 @@
 # Create a class to hold a city location. Call the class "City". It should have
 # fields for name, latitude, and longitude.
 import csv
+import textwrap
 
 
 class City:
@@ -85,10 +86,26 @@ for c in cities:
 # Salt Lake City: (40.7774,-111.9301)
 
 # TODO Get latitude and longitude values from the user
+lat1 = input("Please input the latitude of the first location. ---->>>")
+lon1 = input("Awesome, now input the longitude of the first location. ----->>>")
+lat2 = input("Please input the latitude of the second location. ---->>>")
+lon2 = input(
+    "Awesome, now input the longitude of the second location. ----->>>")
+
+
+print(
+    f'Great, the latitude and logitude of the first location is {lat1}, {lon1}, and the second location is at {lat2}, {lon2}')
 
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # within will hold the cities that fall within the specified region
+    lat1 = float(lat1)
+    lat2 = float(lat2)
+    lon1 = float(lon1)
+    lon2 = float(lon2)
+
+    # for city in cities:
+    #     if city.lon <
     within = []
 
     # TODO Ensure that the lat and lon valuse are all floats
