@@ -9,7 +9,7 @@ class GroundVehicle():
         self.num_wheels = num_wheels
 
     def drive(self):
-        print("vroooom")
+        return("vroooom")
 
 # Subclass Motorcycle from GroundVehicle.
 #
@@ -21,12 +21,13 @@ class GroundVehicle():
 
 class Motorcycle(GroundVehicle):
     def __init__(self):
-        # need to do some research on how super works again
         super().__init__(num_wheels=2)
+        # need to do some research on how super works again
+        # super().__init__(num_wheels)
 
     def drive(self):
         # lol i need to match the tests exactly
-        print("BRAAAP!!")
+        return("BRAAAP!!")
 
 
 vehicles = [
