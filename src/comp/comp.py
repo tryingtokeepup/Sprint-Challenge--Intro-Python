@@ -29,7 +29,7 @@ humans = [
 # whose name starts with 'D':
 print("Starts with D:")
 # Holy Jesus Batman, this took a while to write.
-a = [Human.name for Human in humans if Human.name[0] == 'D' or 'd']
+a = [Human.name for Human in humans if Human.name[0] == 'D']
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
@@ -78,8 +78,11 @@ print(f)
 # The "humans" list should be unmodified.
 
 # I wonder if this requires a map like Javscript so that we don't modify the original humans list.
+# oh wow, okay. So to do this, we need to take the original Human tuple, and then rebuild the stuff inside it with the changes done to the original data. This was confusing.
+# what the test expects:  expected = [Human("ALICE", 34), Human("BOB", 37), Human("CHARLIE", 42), Human("DAPHNE", 35), Human("EVE", 31), Human("FRANK", 23), Human("GLENN", 47), Human("HARRISON", 17), Human("IGON", 46), Human("DAVID", 36)]
+
 print("All names capitalized:")
-g = [(Human.name.upper(), Human.age + 5) for Human in humans]
+g = [Human(newHuman.name.upper(), newHuman.age + 5) for newHuman in humans]
 print(g)
 
 # Write a list comprehension that contains the square root of all the ages.
