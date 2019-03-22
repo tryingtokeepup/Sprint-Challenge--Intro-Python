@@ -40,8 +40,8 @@ vehicles = [
 # Go through the vehicles list and print the result of calling drive() on each.
 
 # lol you can just for loop these, can't you?
-for coolawesomevehicles in vehicles:
-    print(coolawesomevehicles(drive()))
+for vehicles in vehicles:
+    print(vehicles.drive())
 
 
 # GroundVehicle(drive),
