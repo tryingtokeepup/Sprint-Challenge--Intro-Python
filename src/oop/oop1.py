@@ -59,7 +59,7 @@ class Car(GroundVehicle):
         pass
 
 
-class Motocycle(GroundVehicle):
+class Motorcycle(GroundVehicle):
     def __init__(self):
         # inherits from GroundVehicle
         pass
