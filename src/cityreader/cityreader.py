@@ -92,6 +92,16 @@ lat2 = input("Please input the latitude of the second location. ---->>>")
 lon2 = input(
     "Awesome, now input the longitude of the second location. ----->>>")
 
+# yikes, maybe i should turn this into a dictionary and clean this up. will ask.
+lat1 = float(lat1)
+lat2 = float(lat2)
+lon1 = float(lon1)
+lon2 = float(lon2)
+
+
+# might be better to use split, like so:
+# cmd = input("Hello, please input the two locations in the following manner: lat1,lon1,lat2,lon2: ").split(",")
+# This splits the input into a list wherever there is a comma
 
 print(
     f'Great, the latitude and logitude of the first location is {lat1}, {lon1}, and the second location is at {lat2}, {lon2}')
@@ -99,17 +109,29 @@ print(
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # within will hold the cities that fall within the specified region
-    lat1 = float(lat1)
-    lat2 = float(lat2)
-    lon1 = float(lon1)
-    lon2 = float(lon2)
-
-    # for city in cities:
-    #     if city.lon <
     within = []
+
+    # to normalize the coordinates, you might have to mulitply all the coordinates by negative 1.
+    for city in cities:
+        if lat1 > city.lat > lat2:
+            if lon1 > city.lon > lon2:
+                within.append(city)
+            else:
+                break
+        else:
+            break
+    return within
 
     # TODO Ensure that the lat and lon valuse are all floats
     # Go through each city and check to see if it falls within
     # the specified coordinates.
 
-    return within
+# Bondor's solution: seems like it naturalizes the coordinates so it passes regardless of the orientation.
+    # if lat1 < lat2:
+    #     lat1, lat2 = lat2, lat1
+    # if lon1 < lon2:
+    #     lon1, lon2 = lon2, lon1
+
+    # for c in cities:
+    #     if c.lat < lat1 and c.lat > lat2 and c.lon < lon1 and c.lon > lon2:
+    #         within.append(c)
