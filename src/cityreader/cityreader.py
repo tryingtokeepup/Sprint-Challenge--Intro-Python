@@ -135,3 +135,25 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     # for c in cities:
     #     if c.lat < lat1 and c.lat > lat2 and c.lon < lon1 and c.lon > lon2:
     #         within.append(c)
+
+# def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
+#     within = []
+
+#     lat1, lon1 = float(lat1), float(lon1)
+#     lat2, lon2 = float(lat2), float(lon2)
+
+#     # Normalizex
+
+#     if lat2 < lat1:
+#         lat1, lat2 = lat2, lat1  # Swap
+
+#     if lon2 < lon1:
+#         lon1, lon2 = lon2, lon1  # Swap
+
+#     # Filter
+
+#     for c in cities:
+#         if c.lat >= lat1 and c.lat <= lat2 and c.lon >= lon1 and c.lon <= lon2:
+#             within.append(c)
+
+#     return within
