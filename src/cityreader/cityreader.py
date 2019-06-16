@@ -11,7 +11,7 @@ class City:
         self.lon = float(lon)
 
     def __repr__(self):
-        return f"({self.name} is located at coordinates {self.lat}, {self.lon}."
+        return f"{self.name} is located at coordinates {self.lat}, {self.lon}."
 # We have a collection of US cities with population over 750,000 stored in the
 # file "cities.csv". (CSV stands for "comma-separated values".)
 #
